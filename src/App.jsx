@@ -1,7 +1,14 @@
+import Header from "./Header";
+import InputGroup from "./InputGroup";
+import logo from "./assets/investment-calculator-logo.png"
+
 function App() {
   return (
-    <h1>React Investment Calculator</h1>
-  )
+    <>
+      <Header investmentLogo={logo}/>
+      <InputGroup/>
+    </>
+  );
 }
 
-export default App
+export default App;
