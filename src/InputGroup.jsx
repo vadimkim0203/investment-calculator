@@ -1,27 +1,38 @@
 import { useState } from "react";
 
 export default function InputGroup() {
-  useState();
+  const [userInput, setUserInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
+
+  function handleChange(inputIdentifier, newValue) {
+    setUserInput(prevUserInput => {
+      return {...prevUserInput, }
+    })
+  }
 
   return (
-    <div id="user-input">
-      <div id="">
-        <h3 id="user-input label">Initial investment</h3>
-        <input type="text" />
-      </div>
+    <section id="user-input">
+      <p id="input-group">
+        <label id="user-input label">Initial investment</label>
+        <input type="number" required />
+      </p>
 
-      <div id="input-group">
-        <h3 id="user-input label">Expected return</h3>
-        <input type="text" />
-      </div>
-      <div id="input-group">
-        <h3 id="user-input label">Annual investment</h3>
-        <input type="text" />
-      </div>
-      <div id="input-group">
-        <h3 id="user-input label">Duration</h3>
-        <input type="text" />
-      </div>
-    </div>
+      <p id="input-group">
+        <label id="user-input label">Expected return</label>
+        <input type="number" required />
+      </p>
+      <p id="input-group">
+        <label id="user-input label">Annual investment</label>
+        <input type="number" required />
+      </p>
+      <p id="input-group">
+        <label id="user-input label">Duration</label>
+        <input type="number" required />
+      </p>
+    </section>
   );
 }
